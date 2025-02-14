@@ -8,7 +8,7 @@ export default function FormComponent(){
           const response = await fetch('http://localhost:8080/add/todoItem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newTodo), // Assuming `newTodo` has all the required fields
+            body: JSON.stringify(newTodo),
             });
             console.log(response);
 
@@ -30,6 +30,7 @@ export default function FormComponent(){
   
     return <>
     <form onSubmit={handleSubmit}>
+    <h1 style={{color:"black"}}>Add New Todo Item</h1>
       <label>
         Name&nbsp;
         <input name="name" onChange={(e) => setNewTodo({ ...newTodo, name: e.target.value })} required />
